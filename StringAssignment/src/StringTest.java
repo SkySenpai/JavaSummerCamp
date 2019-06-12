@@ -37,12 +37,18 @@ public class StringTest {
 
 	// 3.
     public static boolean isPalindrome(String str) {
-        boolean out = true;
-        //TODO: Complete function code
+        boolean palindrome = true;
+        int word = str.length();
+        String word2 = "";
+        for (int l = 0; l < word; l++ ) {
+        	word2 = word2 + (str.charAt(l) - 1);
+        }
         
-        return out;
+        
+        
+       
+        return  palindrome;  
     }
-    
     // 4.
     public static String removeDashes(String ssn) {
         String out = "";
@@ -118,6 +124,7 @@ public class StringTest {
         System.out.println(writeFirstLast(name));
         System.out.println("Testing reverse String");
         System.out.println(reverse("John Wick"));
+        System.out.println(isPalindrome("racecar"));
     }
 
 }
