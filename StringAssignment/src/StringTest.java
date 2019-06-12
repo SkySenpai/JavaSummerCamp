@@ -22,7 +22,9 @@ public class StringTest {
         //TODO: Complete function code
         
         for (int L = 0;  L < str.length(); L++ ) {
-        	out = out +  (charAt(str.length()) - 1 - L);
+        	out = out +  (str.charAt(str.length()- 1 - L));
+//        	System.out.println(str.charAt(str.length()));
+//        	System.out.println(out);
         }
        
         return out;
@@ -114,8 +116,8 @@ public class StringTest {
         System.out.println("Testing Number 1");
         String name = "Twain, Mark";
         System.out.println(writeFirstLast(name));
-        String out = "John Wick";
-        System.out.println(reverse());
+        System.out.println("Testing reverse String");
+        System.out.println(reverse("John Wick"));
     }
 
 }
