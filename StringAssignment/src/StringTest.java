@@ -20,13 +20,20 @@ public class StringTest {
     public static String reverse(String str) {
         String out = "";
         //TODO: Complete function code
-        int n = str.length();
-        for(n = 9; n == 0; n--)
-        int out = n;
+        
+        for (int L = 0;  L < str.length(); L++ ) {
+        	out = out +  (charAt(str.length()) - 1 - L);
+        }
+       
         return out;
     }
     
-    // 3.
+    private static int charAt(int length) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	// 3.
     public static boolean isPalindrome(String str) {
         boolean out = true;
         //TODO: Complete function code
@@ -108,7 +115,7 @@ public class StringTest {
         String name = "Twain, Mark";
         System.out.println(writeFirstLast(name));
         String out = "John Wick";
-        System.out.println(reverse(out));
+        System.out.println(reverse());
     }
 
 }
