@@ -63,42 +63,39 @@ public class StringTest {
     
     // 5a and 5b.
     public static String changeDateFormat(String dateStr) {
-        String out = "";
+    	 String out ="";
+         
+         if(dateStr.length() == 8) {
+         
+         String months3 = dateStr.substring(0,2); // 9-
+         String days3 = dateStr.substring(2,4);   // 1-
+         String years3 = dateStr.substring(4,8);  // 2002
+         
+         	
+         out = out + (days3 + months3 + years3);
+         }
+         
+         
+         if(dateStr.length() == 9) {
+         	
+         String months2 = dateStr.substring(0,2); //9 0 
+         String days2 = dateStr.substring(2,5);   //-10- 1,2,3,4
+         String years2 = dateStr.substring(5,9);  //2002  5,6,7,8
+         
+         	
+         out = out + (days2 + months2+ years2);
+         }
+         
         
-        if (dateStr.length()== 9) {
+        
+        if (dateStr.length() == 10) {
         
         String months = dateStr.substring(0,2);
         String days = dateStr.substring(3,6);
         String years = dateStr.substring(5,10);
         
         out = out + (days + months + years);
-        
-        String out2 = "";
-        
-        if(dateStr.length() == 8) {
-        	
-        String months2 = dateStr.substring(0,2); //9-
-        String days2 = dateStr.substring(3,5);   //10
-        String years2 = dateStr.substring(5,9);  //-2002
-        
-        	
-        out2 = out2 + (days2 + months2+ years2);
-        
-        String out3 ="";
-        
-        if(dateStr.length() == 7) {
-        
-        String months3 = dateStr.substring(0,1);
-        String days3 = dateStr.substring(2,4);
-        String years3 = dateStr.substring(3,8);
-        
-        	
-        out3 = out3 + (days3 + months3 + years3);
-        
-        //TODO: Complete function code
-        			}
-        		}
-        	}               	
+        }         	
         	return out;
         }   
     // 6a.
@@ -132,10 +129,23 @@ public class StringTest {
     // 8.
     public static String removeComments(String str) {
         String out = "";
+        int fSlash = str.indexOf("/*");
+        int fSlash2 = str.indexOf("*/");
+        String c = str.substring(0,12);
+       // String a = str.substring(0,fSlash);
+        //String b = str.substring(fSlash + 1, fSlash2);
+        String d = str.substring (fSlash ,fSlash2);
+        if(str.indexOf(c) == str.indexOf(d)) {
+        	out = out +(d);	
         
+        } else {
+        	out = out + (str);
+        
+        
+        	
+        }
         return out;
     }
-    
     // 9.
     public static String removeTag(String html) {
         String out = "";
@@ -165,10 +175,12 @@ public class StringTest {
       	System.out.println(reverse("John Wick"));    //works  //2
       	System.out.println(isPalindrome("racecar")); //does'nt work //3
       	System.out.println(removeDashes("674-45-7896")); // works  //4
-      	System.out.println(changeDateFormat("9-10-2002")); //works //5.a
+      	System.out.println(changeDateFormat("09-10-2002")); //works //5.a 5.b
       	System.out.println(lastFour("4111 1111 1111 1111")); //works // 6.a 
       	System.out.println(lastFive("4111 1111 1111 1111")); //works //6.b
       	System.out.println(scroll("John Wick")); //works  //7
+      	System.out.println(removeComments("/*JohnWick*/")); //8  //does'nt work but i am close
+      	System.out.println(removeTag("<b> dogs <b>"));
     }
 
 }
